@@ -87,7 +87,6 @@ public class WebSecurityConfig {
                 .logout(logout -> logout.permitAll())
                 .exceptionHandling(handling -> handling.accessDeniedPage("/403"))
                 .build();
-
     }
     @Configuration
     public class MvcConfig implements WebMvcConfigurer{
