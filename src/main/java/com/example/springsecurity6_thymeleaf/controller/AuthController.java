@@ -4,6 +4,7 @@ import com.example.springsecurity6_thymeleaf.entiry.Role;
 import com.example.springsecurity6_thymeleaf.entiry.Users;
 import com.example.springsecurity6_thymeleaf.model.LoginDto;
 import com.example.springsecurity6_thymeleaf.model.SignUpDto;
+import com.example.springsecurity6_thymeleaf.repository.RoleRepository;
 import com.example.springsecurity6_thymeleaf.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -28,13 +29,16 @@ public class AuthController {
     private AuthenticationManager authenticationManager;
 
     @Autowired
-    private UserRepository userRepository;
+    private UserRepository UserRepository;
 
     @Autowired
     private RoleRepository roleRepository;
 
     @Autowired
     private PasswordEncoder passwordEncoder;
+
+    @Autowired
+    private UserRepository userRepository;
 
     @PostMapping("/signin")
     public ResponseEntity<String> authenticateUser(@RequestBody LoginDto loginDto){
